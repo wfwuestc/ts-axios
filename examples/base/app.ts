@@ -74,7 +74,7 @@ import axios from '../../src/index'
 //   method: 'post',
 //   url: '/base/post',
 //   headers: {
-//     'content-type': 'application/json'
+//     'content-type': 'application/json;charset=utf-8'
 //   },
 //   data: {
 //     a: 1,
