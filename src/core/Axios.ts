@@ -48,7 +48,6 @@ export default class Axios {
         rejected: undefined
       }
     ]
-
     this.interceptors.request.forEach(interceptor => {
       chain.unshift(interceptor)
     })
