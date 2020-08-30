@@ -74,6 +74,10 @@ export interface AxiosInstance extends Axios {
 
 export interface AxiosStatic extends AxiosInstance {
   create(config?: AxiosRequestConfig): AxiosInstance
+
+  CancelToken: CancelTokenStatic
+  Cancel: CancelStatic
+  isCancel: (value: any) => boolean
 }
 
 export interface AxiosInterceptorManager<T> {
@@ -96,6 +100,8 @@ export interface AxiosTransformer {
 export interface CancelToken {
   promise: Promise<string>
   reason?: string
+
+  throwIfRequested(): void
 }
 
 // 取消方法
@@ -116,4 +122,12 @@ export interface CancelTokenSource {
 export interface CancelTokenStatic {
   new (excutor: CancelExecutor): CancelToken
   source(): CancelTokenSource
+}
+
+export interface Cancel {
+  message?: string
+}
+
+export interface CancelStatic {
+  new (message?: string): Cancel
 }

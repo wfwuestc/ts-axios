@@ -5,3 +5,7 @@ export default class Cancel {
     this.message = message
   }
 }
+
+export function isCancel(value: any): boolean {
+  return value instanceof Cancel
+}
